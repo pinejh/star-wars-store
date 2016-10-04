@@ -1,0 +1,8 @@
+@font-face {
+ font-family: Jedi;
+ src: url(Starjedi.tff);
+}
+
+h1 {
+ font-family: Jedi;
+}
