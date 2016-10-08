@@ -24,7 +24,8 @@ $("body").on("click", "#tab3", function () {
 });
 
 $(function () {
- 
- $.getJSON('./sabers.json', function (json) { alert('success'); });
+ alert(sabers);
+ sabers = $.getJSON('sabers.json');
+ alert(JSON.stringify(sabers));
  
 });
