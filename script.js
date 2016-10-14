@@ -27,7 +27,7 @@ function setNav(tab) {
   break;
  default:
   $('#nav').html('<li></li><li class="navitem" id="tab1"><h2>Lightsabers</h2><div class="selected"></div></li><li class="navitem" id="tab2"><h2>Blasters</h2></li><li class="navitem" id="tab3"><h2>Other Weapons</h2></li><li></li>');
-  loadSabers();
+  loadItems(sabers);
  }
 }
 
