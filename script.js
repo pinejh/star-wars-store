@@ -1,18 +1,18 @@
 var sabers = [{"name": "Anakin's Lightsaber", "price": 3.99, "imgsrc": "images/lightsabers/anakin.png"}, {"name": "Count Dooku's Lightsaber", "price": 4.99, "imgsrc": "images/lightsabers/dooku.png"}, {"name": "Luke's Lightsaber", "price": 4.69, "imgsrc": "images/lightsabers/luke.png"}, {"name": "Obi-Wan's Lightsaber", "price": 3.39, "imgsrc": "images/lightsabers/obiwan.png"}, {"name": "Kylo Ren's Lightsaber", "price": 6.99, "imgsrc": "images/lightsabers/ren.png"}, {"name": "Darth Vader's Lightsaber", "price": 3.99, "imgsrc": "images/lightsabers/vader.png"}, {"name": "Mace Windu's Lightsaber", "price": 4.99, "imgsrc": "images/lightsabers/windu.png"}];
 
-function loadSabers() {
- //$('.shop').html('');
- var html = '', i, n;
- alert(sabers.length);
- for (i = 0; i < 2; i += 1) {
-  alert(html);
-  html += '<tr class="row">';
-  var temp = '';
-  for (n = 0; n<3&&n<(sabers.length-(n+3*i)); n += 1) {
-   temp += '<td class="item"><img src="' + sabers[n + i * 3].imgsrc + '"/><h3 class="name">' + sabers[n + i * 3].name + '</h3><h4 class="price">' + sabers[n + i * 3].price + '</h4>';
+function loadItems(items) {
+ $('.shop').html('');
+ var html = '', i;
+ alert(items.length);
+ html += '<tr class="row">';
+ for (i = 0; i < items.length; i += 1) {
+  if (i % 3 == 0&&i!=0) {
+   html += '<tr>';
+   html += '<tr class="row">';
   }
-  html += '<tr>';
+  html += '<td class="item"><img src="' + items[i].imgsrc + '"/><h3 class="name">' + items[i].name + '</h3><h4 class="price">' + items[i].price + '</h4>';
  }
+ html += '</tr>';
  alert(html);
  $('.shop').html(html);
 }
