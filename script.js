@@ -1,13 +1,15 @@
 function loadItems(items) {
  $('.shop').html('');
- var html = '', i;
+ var html = '', i, item;
+ if(items[0].name == sabers[0].name) item = 0;
+ else item = 1;
  html += '<tr class="row">';
  for (i = 0; i < items.length; i += 1) {
   if (i % 3 == 0&&i!=0) {
    html += '<tr>';
    html += '<tr class="row">';
   }
-  html += '<td class="item"><img src="' + items[i].imgsrc + '"/><h3 class="name">' + items[i].name + '</h3><h4 class="price">' + items[i].price + '</h4>';
+  html += '<td class="item" onclick="openItem('+i+', '+item+')"><img src="' + items[i].imgsrc + '"/><h3 class="name">' + items[i].name + '</h3><h4 class="price">' + items[i].price + '</h4>';
  }
  html += '</tr>';
  $('.shop').html(html);
@@ -34,6 +36,13 @@ $("body").on("click", "#tab2", function () {
 $("body").on("click", "#tab3", function () {
  setNav(3);
 });
+
+function openItem(i, item) {
+ var product;
+ if(item == 0) product = sabers[i];
+ else product = blasters[i];
+ alert(product.name);
+}
 
 $(function () {
  setNav(1);
