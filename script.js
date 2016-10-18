@@ -9,7 +9,7 @@ function loadItems(items) {
    html += '<tr>';
    html += '<tr class="row">';
   }
-  html += '<td class="item" onclick="openItem('+i+', '+item+')"><img src="' + items[i].imgsrc + '"/><h3 class="name">' + items[i].name + '</h3><h4 class="price">' + items[i].price + '</h4>';
+  html += '<td class="item" onclick="openItem('+i+', '+item+')"><img src="' + items[i].imgsrc + '"/><h3 class="name">' + items[i].name + '</h3><h4 class="price">$' + items[i].price + '</h4>';
  }
  html += '</tr>';
  $('.shop').html(html);
@@ -41,7 +41,11 @@ function openItem(i, item) {
  var product;
  if(item == 0) product = sabers[i];
  else product = blasters[i];
- alert(product.name);
+ $('#window').html('<div id="popup" onclick="exitItem()"><div id="item"><img src="'+product.imgsrc+'"/><div class="text"><h3 class="details">'+product.name+'</h3><h4 class="details">$'+product.price+'</h4></div></div></div>');
+}
+
+function exitItem() {
+ $('#window').html('');
 }
 
 $(function () {
