@@ -42,7 +42,7 @@ body {
 .nav>ul>li.navitem:hover {
  background-color: #e3e3e5;
 }
-.nav>ul>li>h2 {
+.title {
  position: relative;
  top: .15em;
  font-size: 2em;
@@ -54,6 +54,19 @@ body {
  left:10%;
  position:relative;
  top:.3em;
+}
+.left {
+ position: relative;
+ right: 10%;
+ top: .15em;
+ font-size: 2em;
+ float: left:
+}
+.right {
+ position: relative;
+ top: -1.25em;
+ right: 3em;
+ float: right;
 }
 
 .shop {
